@@ -1,5 +1,6 @@
 from .models import CarMake, CarModel
 
+
 def initiate():
     car_make_data = [
         {"name": "NISSAN", "description": "Great cars. Japanese technology"},
@@ -15,29 +16,28 @@ def initiate():
         description = data['description']
         car_make_instances.append(CarMake.objects.create(name, description))
 
-
     # Create CarModel instances with the corresponding CarMake instances
-    car_make_0 = car_make_instances[0]
-    car_make_1 = car_make_instances[1]
-    car_make_2 = car_make_instances[2]
-    car_make_3 = car_make_instances[3]
-    car_make_4 = car_make_instances[4]
+    make_0 = car_make_instances[0]
+    make_1 = car_make_instances[1]
+    make_2 = car_make_instances[2]
+    make_3 = car_make_instances[3]
+    make_4 = car_make_instances[4]
     car_model_data = [
-      {"name": "Pathfinder", "type": "SUV", "year": 2023, "car_make": car_make_0},
-      {"name": "Qashqai", "type": "SUV", "year": 2023, "car_make": car_make_0},
-      {"name": "XTRAIL", "type": "SUV", "year": 2023, "car_make": car_make_0},
-      {"name": "A-Class", "type": "SUV", "year": 2023, "car_make": car_make_1},
-      {"name": "C-Class", "type": "SUV", "year": 2023, "car_make": car_make_1},
-      {"name": "E-Class", "type": "SUV", "year": 2023, "car_make": car_make_1},
-      {"name": "A4", "type": "SUV", "year": 2023, "car_make": car_make_2},
-      {"name": "A5", "type": "SUV", "year": 2023, "car_make": car_make_2},
-      {"name": "A6", "type": "SUV", "year": 2023, "car_make": car_make_2},
-      {"name": "Sorrento", "type": "SUV", "year": 2023, "car_make": car_make_3},
-      {"name": "Carnival", "type": "SUV", "year": 2023, "car_make": car_make_3},
-      {"name": "Cerato", "type": "Sedan", "year": 2023, "car_make": car_make_3},
-      {"name": "Corolla", "type": "Sedan", "year": 2023, "car_make": car_make_4},
-      {"name": "Camry", "type": "Sedan", "year": 2023, "car_make": car_make_4},
-      {"name": "Kluger", "type": "SUV", "year": 2023, "car_make": car_make_4},
+      {"name": "Pathfinder", "type": "SUV", "year": 2023, "car_make": make_0},
+      {"name": "Qashqai", "type": "SUV", "year": 2023, "car_make": make_0},
+      {"name": "XTRAIL", "type": "SUV", "year": 2023, "car_make": make_0},
+      {"name": "A-Class", "type": "SUV", "year": 2023, "car_make": make_1},
+      {"name": "C-Class", "type": "SUV", "year": 2023, "car_make": make_1},
+      {"name": "E-Class", "type": "SUV", "year": 2023, "car_make": make_1},
+      {"name": "A4", "type": "SUV", "year": 2023, "car_make": make_2},
+      {"name": "A5", "type": "SUV", "year": 2023, "car_make": make_2},
+      {"name": "A6", "type": "SUV", "year": 2023, "car_make": make_2},
+      {"name": "Sorrento", "type": "SUV", "year": 2023, "car_make": make_3},
+      {"name": "Carnival", "type": "SUV", "year": 2023, "car_make": make_3},
+      {"name": "Cerato", "type": "Sedan", "year": 2023, "car_make": make_3},
+      {"name": "Corolla", "type": "Sedan", "year": 2023, "car_make": make_4},
+      {"name": "Camry", "type": "Sedan", "year": 2023, "car_make": make_4},
+      {"name": "Kluger", "type": "SUV", "year": 2023, "car_make": make_4},
         # Add more CarModel instances as needed
     ]
 
