@@ -40,16 +40,16 @@ def login_user(request):
         data = {"userName": username, "status": "Authenticated"}
     return JsonResponse(data)
 
-# Create a `logout_request` view to handle sign out request
 
+# Create a `logout_request` view to handle sign out request
 def logout_request(request):
     logout(request)
     data = {"userName": ""}
     return JsonResponse(data)
 # ...
 
-# Create a `registration` view to handle sign up request
 
+# Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
     # context = {}
@@ -68,6 +68,7 @@ def registration(request):
         username_exist = True
     except Exception as Err:
         # If not, simply log this is a new user
+        logger.debug(Err)
         logger.debug("{} is new user".format(username))
 
     # If it is a new user
@@ -92,7 +93,8 @@ def registration(request):
 # # Update the `get_dealerships` view to render the index page with
 # a list of dealerships
 # def get_dealerships(request):
-# Update the `get_dealerships` render list of dealerships all by default, particular state if state is passed
+# Update the `get_dealerships` render list of dealerships all by default,
+# particular state if state is passed
 def get_dealerships(request, state="All"):
     if (state == "All"):
         endpoint = "/fetchDealers"
@@ -139,8 +141,10 @@ def add_review(request):
         data = json.loads(request.body)
         try:
             response = post_review(data)
+            print(response)
             return JsonResponse({"status": 200})
         except Exception as err:
+            print(err)
             return JsonResponse({
                 "status": 401,
                 "message": "Error in posting review"
@@ -163,4 +167,3 @@ def get_cars(request):
             "CarMake": car_model.car_make.name
         })
     return JsonResponse({"CarModels": cars})
-    
