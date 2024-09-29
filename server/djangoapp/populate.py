@@ -47,4 +47,3 @@ def initiate():
         type = data['type']
         year = data['year']
         CarModel.objects.create(name, car_make, type, year)
-            
